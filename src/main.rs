@@ -18,7 +18,7 @@ use solana_sdk::{program_pack::Pack, pubkey::Pubkey};
 
 pub const RPC_URL: &str = "https://api.devnet.solana.com";
 
-// demo pair id trên devnet (bro thay bằng pool real nha)
+//  pair id on devnet
 pub const PAIR: &str = "FvKuEuRyfDZ8catHJznC7heKLkC1uopRaaKMDY1Nym2T";
 
 pub struct SarosDlmm {
@@ -170,13 +170,12 @@ impl SarosDlmm {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-    // let client = RpcClient::new(RPC_URL.to_string());
 
     // // Pair pubkey
     let pair_key = Pubkey::try_from(PAIR)?;
 
     let saros_dlmm = SarosDlmm::new(
-        saros::ID, // example program id, bro thay bằng program id real nha
+        saros::ID, 
         pair_key,
     );
 
