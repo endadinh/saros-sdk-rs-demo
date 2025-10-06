@@ -1421,7 +1421,7 @@ version = "0.1.0"
 dependencies = [
  "anyhow",
  "jupiter-amm-interface",
- "saros",
+ "liquidity-book",
  "saros-sdk",
  "solana-client",
  "solana-sdk",
@@ -2567,6 +2567,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "liquidity-book"
+version = "0.1.0"
+source = "git+https://github.com/saros-xyz/saros-dlmm-sdk-rs.git?branch=devnet#99e661545d1bd5e6ac46476f59a49ffa7c8452f3"
+dependencies = [
+ "anchor-gen",
+ "anchor-lang",
+ "rand 0.8.5",
+ "solana-sdk",
+]
+
+[[package]]
 name = "litemap"
 version = "0.8.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3492,6 +3503,15 @@ dependencies = [
 ]
 
 [[package]]
+name = "rewarder-hook"
+version = "0.1.0"
+source = "git+https://github.com/saros-xyz/saros-dlmm-sdk-rs.git?branch=devnet#99e661545d1bd5e6ac46476f59a49ffa7c8452f3"
+dependencies = [
+ "anchor-gen",
+ "anchor-lang",
+]
+
+[[package]]
 name = "ring"
 version = "0.17.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3757,25 +3777,13 @@ dependencies = [
 ]
 
 [[package]]
-name = "saros"
-version = "0.1.0"
-source = "git+https://github.com/saros-xyz/saros-dlmm-sdk-rs.git?branch=devnet#50b4f5ec8a2fcbfd293e2c56685a38eb6974682f"
-dependencies = [
- "anchor-gen",
- "anchor-lang",
- "jupiter-amm-interface",
- "rand 0.8.5",
- "solana-sdk",
-]
-
-[[package]]
 name = "saros-sdk"
 version = "0.1.0"
-source = "git+https://github.com/saros-xyz/saros-dlmm-sdk-rs.git?branch=devnet#50b4f5ec8a2fcbfd293e2c56685a38eb6974682f"
+source = "git+https://github.com/saros-xyz/saros-dlmm-sdk-rs.git?branch=devnet#99e661545d1bd5e6ac46476f59a49ffa7c8452f3"
 dependencies = [
  "anyhow",
  "arrayref",
- "jupiter-amm-interface",
+ "rewarder-hook",
  "ruint",
  "solana-sdk",
  "spl-token",
@@ -7333,7 +7341,7 @@ version = "0.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22"
 dependencies = [
- "windows-sys 0.61.1",
+ "windows-sys 0.52.0",
 ]
 
 [[package]]

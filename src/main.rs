@@ -5,7 +5,7 @@ use saros_sdk::{
         fees::{
             compute_transfer_amount_for_expected_output, compute_transfer_fee, TokenTransferFee,
         },
-        swap_manager::get_swap_result,
+        swap_manager::{get_swap_result, SwapType},
     },
     state::{
         bin_array::{BinArray, BinArrayPair},
@@ -123,7 +123,7 @@ impl SarosDlmm {
                     bin_array,
                     amount_in_after_transfer_fee,
                     swap_for_y,
-                    swap_mode,
+                    SwapType::ExactIn,
                     block_timestamp,
                 )?;
 
@@ -141,7 +141,7 @@ impl SarosDlmm {
                     bin_array,
                     amount_out_before_transfer_fee,
                     swap_for_y,
-                    swap_mode,
+                    SwapType::ExactOut,
                     block_timestamp,
                 )?;
 
@@ -170,14 +170,10 @@ impl SarosDlmm {
 
 #[tokio::main]
 async fn main() -> Result<()> {
-
     // // Pair pubkey
     let pair_key = Pubkey::try_from(PAIR)?;
 
-    let saros_dlmm = SarosDlmm::new(
-        saros::ID, 
-        pair_key,
-    );
+    let saros_dlmm = SarosDlmm::new(liquidity_book::ID, pair_key);
 
     let quote = saros_dlmm.quote(&QuoteParams {
         amount: 1_000_000, // 1 token in base units

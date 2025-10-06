@@ -6,7 +6,7 @@ edition = "2021"
 [dependencies]
 jupiter-amm-interface = "0.6"
 saros-sdk = { git = "https://github.com/saros-xyz/saros-dlmm-sdk-rs.git", branch = "devnet", package = "saros-sdk" }
-saros = { git = "https://github.com/saros-xyz/saros-dlmm-sdk-rs.git", branch = "devnet", package = "saros" }
+liquidity-book = { git = "https://github.com/saros-xyz/saros-dlmm-sdk-rs.git", branch = "devnet", package = "liquidity-book" }
 solana-sdk = "2.3.1"
 solana-client = "2.3.1"
 anyhow = "1.0"
